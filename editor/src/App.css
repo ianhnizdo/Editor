@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,12 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.Drag{
+  background-image: url('https://png.pngtree.com/png-clipart/20220826/ourmid/pngtree-square-text-box-label-banner-yellow-brown-png-image_6123166.png');
+  width: 100px;
+  height: 100px;
+  display: inline-block;
 }

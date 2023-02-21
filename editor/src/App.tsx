@@ -1,27 +1,31 @@
 
-// import React from 'react';
+import React, {useState, useEffect} from 'react';
+import Drag from './components/Drag';
+import Drop from './components/Drop';
+import {DndProvider} from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import { DropDetails } from './models/DropDetails';
+import BigScreen from './components/BigScreen';
 // import logo from './logo.svg';
-// // import './App.css';
+// import './App.css';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+function App() {
 
-// export default App;
+  // const [dropOrder, setDropOrder] = useState<DropDetails[]>([]);
+
+  
+  return (
+    <DndProvider backend={HTML5Backend}>
+
+      <div className="App">
+        <header className="App-header">
+          {/* <Drag />
+          <Drop stringArr={dropOrder}/> */}
+          <BigScreen />
+          </header>
+        </div>
+      </DndProvider>
+  );
+}
+
+export default App;
