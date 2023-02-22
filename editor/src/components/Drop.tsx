@@ -25,7 +25,7 @@ function Drop(props : {key: Number, type: String, src: String}): JSX.Element {
     }
 
     const fileUpload=(event: React.MouseEvent)=>{
-        
+
     }
     
 
@@ -43,10 +43,10 @@ function Drop(props : {key: Number, type: String, src: String}): JSX.Element {
                     accept="image/*"
                     ref={hiddenFileInput}
                     style={{display: 'none'}}
-                    id="contained-button-file"
+                    id="file-input"
                     onChange={handleFileChange}
                 />
-                <label htmlFor="imageUpload">
+                <label htmlFor="file-input">
                 <Button variant="contained" color="primary" component="span" onClick={(e)=>fileUpload(e)}>
                     Upload
                 </Button>
