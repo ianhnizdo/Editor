@@ -32,7 +32,9 @@ function BigScreen(): JSX.Element {
     const addImageToBoard = (id : Number) =>{
     //    const filteredList = imageList.filter((el)=>el.id===id);
        let obj = {type: ''};
-       obj.type = id===1 ? "text" : "image";
+       console.log(id);
+       obj.type = id === 1 ? "text" : "image";
+       console.log(obj);
        setDropOrder((dropOrder)=>[...dropOrder, obj]);
 
        console.log(dropOrder);

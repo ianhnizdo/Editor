@@ -10,12 +10,14 @@ import { DropDetails } from '../models/DropDetails';
 function Drop(props : {key: Number, type: String}): JSX.Element {
 
     if(props.type==="text"){
+        // console.log(props.type);
         return(
             <div className="Drop">
                 <input type="text" id="text-right"></input>
             </div>
         )
     }else if(props.type==="image"){
+        // console.log('image');
         return (
             <div className="Drop">
                 <button>
