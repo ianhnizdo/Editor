@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { DropDetails } from '../models/DropDetails';
+// import { DropDetails } from '../models/DropDetails';
 import Drag from './Drag';
 import Drop from './Drop';
 import {useDrop} from 'react-dnd';
@@ -31,7 +31,7 @@ function BigScreen(): JSX.Element {
 
     const addImageToBoard = (id : Number) =>{
     //    const filteredList = imageList.filter((el)=>el.id===id);
-       let obj = {type: ''};
+       let obj = {type: '', src: ''};
        console.log(id);
        obj.type = id === 1 ? "text" : "image";
        console.log(obj);
@@ -49,7 +49,7 @@ function BigScreen(): JSX.Element {
 
             <div className="RightSide" ref={drop}>
                 {dropOrder.map((el,i)=>{
-                    return <Drop key={i} type={el.type}/>
+                    return <Drop key={i} type={el.type} src={el.src}/>
                 })}
             </div>
             
