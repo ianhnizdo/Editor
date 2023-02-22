@@ -23,29 +23,34 @@ function BigScreen(): JSX.Element {
     //Certain piece of information from dropping and reference
     const [{isOver}, drop]= useDrop(()=>({
         accept: "Text" || "Image",
-        drop: (item: {id: Number} )=>addImageToBoard(item.id),
-        collect: (monitor)=>({
+        drop: (item: {id: Number} ) => addImageToBoard(item.id),
+        collect: (monitor) => ({
             isOver: !!monitor.isOver(),
         }),
     }))
 
     const addImageToBoard = (id : Number) =>{
-       const filteredList = imageList.filter((el)=>el.id===id);
+    //    const filteredList = imageList.filter((el)=>el.id===id);
        let obj = {type: ''};
-       obj.type = filteredList[0].text==="Text" ? "text" : "image";
-       setDropOrder([...dropOrder, obj]);
+       obj.type = id===1 ? "text" : "image";
+       setDropOrder((dropOrder)=>[...dropOrder, obj]);
+
+       console.log(dropOrder);
     }
 
     return(
         <section className="GrandDisplay">
-        <div className="LeftSideDraggables">{imageList.map((image,i)=>{
-            return <Drag id={image.id} text={image.text} key={i}/>
-        })}</div>
-        <div className="MainBoard">
-            {dropOrder.map((el,i)=>{
-                return <Drop key={i} type={el.type}/>
-            })}
-        </div>
+
+            <div className="LeftSide">{imageList.map((image,i)=>{
+                return <Drag id={image.id} text={image.text} key={i}/>
+            })}</div>
+
+            <div className="RightSide" ref={drop}>
+                {dropOrder.map((el,i)=>{
+                    return <Drop key={i} type={el.type}/>
+                })}
+            </div>
+            
         </section>
         )
     }
