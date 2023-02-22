@@ -9,6 +9,8 @@ import { DropDetails } from '../models/DropDetails';
 
 function Drop(props : {key: Number, type: String, src: String}): JSX.Element {
 
+    const [file, setFile] = useState<String>('')
+
     const hiddenFileInput=useRef(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +27,7 @@ function Drop(props : {key: Number, type: String, src: String}): JSX.Element {
     }
 
     const fileUpload=(event: React.MouseEvent)=>{
-
+        // console.log(event);
     }
     
 
