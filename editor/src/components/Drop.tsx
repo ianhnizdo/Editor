@@ -7,43 +7,41 @@ import { DropDetails } from '../models/DropDetails';
 
 
 
-function Drop(props : {stringArr: DropDetails[]}): JSX.Element {
-    //This will keep our order of drops. It will be an array to preserve order.
-    // const [dropOrder, setDropOrder] = useState<DropDetails[]>([])
+// function Drop(props : {stringArr: DropDetails[]}): JSX.Element {
 
-    // const imageUpload = (e: React.MouseEvent) => {
-    //     e.preventDefault();
+    function Drop(props : {key: Number, type: String}): JSX.Element {
 
-    // }
-    
-    return (
-        <section className="Drop">
-
-            {/* Render the dropped components */}
-            {props.stringArr.map((item, index)=>{
-                if(item.type === "text"){
-                    return(
-                        <input type="text" id={String(index)} draggable></input>
-                    )
-                }else if(item.type === "image"){
-                return (
-                    <Button variant="contained" component="label">
-                        Upload
-                        <input hidden accept="image/*" multiple type="file" />
-                    </Button>
-
-                    // <div className="imageContainer">
+    if(props.type==="text"){
+        return(
+            <input type="text" id="text-right" draggable></input>
+        )
+    }else if(props.type==="image"){
+        return (
+            <Button variant="contained" id="image-right" component="label">
+                Upload
+                <input hidden accept="image/*" multiple type="file" />
+            </Button>
+            );
+        }
+        else{
+            return(<div></div>)
+        }
+        
+    // return(
+    //         <section>
+    //             {if(props.type==="text"){
+    //                 <input type="text" id="text-right" draggable></input>
+    //             }}
+    //         </section>
+    //     )
+    //                 // <div className="imageContainer">
 
                     // <input type="file" accept="image/*" id="contained-button-file"/>
                     // <label htmlFor="container-button-file">
                     //     <Button type="button" onClick={(e)=>imageUpload(e)}>Upload your image</button>
                     // </label>
                     // </div>
-                )}
-            })
-            }
-        </section>
-    )
+             
 }
 
 export default Drop;

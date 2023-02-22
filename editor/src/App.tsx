@@ -7,7 +7,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DropDetails } from './models/DropDetails';
 import BigScreen from './components/BigScreen';
 // import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 
 function App() {
 
